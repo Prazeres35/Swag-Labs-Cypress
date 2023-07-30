@@ -1,0 +1,22 @@
+{
+  "name": "saucedemo",
+  "version": "1.0.0",
+  "description": "Automação Saucedemo ",
+  "main": "cypress.config.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run"
+  },
+  "keywords": [
+    "Cypress.oi"
+  ],
+  "author": "Flavio Prazeres <flavio_prazeres@outlook.com>",
+  "bugs": {
+    "url": "https://www.saucedemo.com/"
+  },
+  "homepage": "https://github.com/Prazeres35",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "cypress": "^12.17.0"
+  }
+}
