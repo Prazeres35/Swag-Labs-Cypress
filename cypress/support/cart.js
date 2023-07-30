@@ -7,10 +7,14 @@ Cypress.Commands.add('class', value => {
     return cy.get(`[class="${value}"]`)
 })
 
-Cypress.Commands.add('form', () => {
-    cy.dataTest('firstName').type('Flavio')
-    cy.dataTest('lastName').type('Prazeres')
-    cy.dataTest('postalCode').type('41192005')
+Cypress.Commands.add('form', (
+    firstName = Cypress.env('firstName'),
+    lastName = Cypress.env('lastName'),
+    postalCode = Cypress.env('postalCode')
+) => {
+    cy.dataTest('firstName').type(firstName),
+        cy.dataTest('lastName').type(lastName),
+        cy.dataTest('postalCode').type(postalCode)
 })
 
 Cypress.Commands.add('fullCheck', (
@@ -71,8 +75,7 @@ Cypress.Commands.add('alert', () => {
     return cy.get(`[class="error-message-container error"]`)
 })
 
-Cypress.Commands.add('programaticLogin', () => {
-    cy.visit('/')
-    cy.url().should('be.equal', `${Cypress.config('baseUrl')}`)
-    cy.login()
+Cypress.Commands.add('removeCart', () => {
+    cy.dataTest('remove-sauce-labs-backpack').click()
+    cy.dataTest('remove-sauce-labs-bolt-t-shirt').click()
 })

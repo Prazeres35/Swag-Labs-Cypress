@@ -12,3 +12,9 @@ Cypress.Commands.add('logout', () => {
     cy.get('a[id="logout_sidebar_link"]').click()
     cy.url().should('be.equal', `${Cypress.config('baseUrl')}`)
 })
+
+Cypress.Commands.add('programaticLogin', () => {
+    cy.visit('/')
+    cy.url().should('be.equal', `${Cypress.config('baseUrl')}`)
+    cy.login()
+})
